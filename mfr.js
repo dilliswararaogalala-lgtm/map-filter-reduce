@@ -78,3 +78,20 @@ console.log(
     uniqueness([["rice", "lentils"], ["rice"], ["curd", "lentils"]])
   }`,
 );
+console.log(
+  `12 => Choir harmony review: ${
+    isPresent([["la", "la"],["mi"],["so", "la"]], 'so')
+  }`,
+);
+console.log(
+  `13 => Vegetable Crate Totals: ${
+    addTheList([[4, 6],[2, 3, 1],[5]])
+  }`,
+);
+console.log(
+  `14 => Post Office Parcel Record: ${
+    uniqueness(["small", "large", "medium", "small"])
+  }`,
+);
+
+
