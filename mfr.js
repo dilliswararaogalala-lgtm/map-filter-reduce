@@ -18,13 +18,6 @@ const countOfRibbons = data => data.reduce(festivalRibbonCount, 0);
 const starGlazingLog = data => data.flatMap(x => x);
 
 const duplicateBirdRemoval = data => data.reduce(isItRepeat, []);
-
-
-const AttendanceList = (data) => {
-  return data
-    .flatMap(x => x)
-    .reduce(isItRepeat, []);
-}
   
 const isDoInGrp = data => {
   return data
@@ -42,6 +35,12 @@ const addTheListElements = data => {
   return data
   .flatMap(x => x)
   .reduce(add, 0)
+}
+
+const uniqueness = data => {
+  return data
+  .flatMap(x => x)
+  .reduce(isItRepeat, []);
 }
 
 function createMessage(descrip, symbol, expected, exactOutput) {
@@ -108,7 +107,7 @@ function testDuplicateBirdRemoval() {
 
 function testAttendanceList() {
   console.log(underline('ATTENDANCE LIST'));
-  getOutput('attendamce list', AttendanceList, [["Asha", "Ravi", "Neel"], ["Ravi"], ["Asha", "Meera"]], ["Asha", "Ravi", "Neel", "Meera"])
+  getOutput('attendamce list', uniqueness, [["Asha", "Ravi", "Neel"], ["Ravi"], ["Asha", "Meera"]], ["Asha", "Ravi", "Neel", "Meera"])
 }
 
 function testNoOfCandies(){
@@ -131,6 +130,11 @@ function testFitnessTracking(){
   getOutput('miles runned', addTheListElements, [[2, 3, 2],[4],[1, 1]], 13)
 }
 
+function testWorkshopColorVariety(){
+  console.log(underline('ART WORKSHOP COLOR VARIETY'));
+  getOutput('different colurs', uniqueness, [["blue", "yellow"],["yellow", "green"],["blue"]],["blue", "yellow", "green"] )
+}
+
 testCountOfRibbons();
 testStarGLazingLog();
 testDuplicateBirdRemoval();
@@ -138,3 +142,4 @@ testAttendanceList();
 testMusicalReharsalNotes();
 testWeatherSesnorValidation();
 testFitnessTracking();
+testWorkshopColorVariety();
