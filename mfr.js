@@ -73,3 +73,8 @@ console.log(
     occurences(["Dune", "Dune", "Foundation", "Dune"], "Dune")
   }`,
 );
+console.log(
+  `11 => lunchbox ingrident inventory: ${
+    uniqueness([["rice", "lentils"], ["rice"], ["curd", "lentils"]])
+  }`,
+);
